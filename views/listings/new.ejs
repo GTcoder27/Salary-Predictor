@@ -1,0 +1,45 @@
+<%- include("../includes/navbar.ejs")%>
+<div class="container">
+
+  <div class="col-6 offset-2">
+    <h3>Create a New Listing</h3>
+    <form method="POST" action="/listings" class="needs-validation " novalidate>
+      
+      <label for="" class="form-label">Enter Title</label>
+      <input name="listing[title]" class="form-control" placeholder="enter title" type="text" required />
+      <label for="" class="form-label">Description</label>
+      <textarea
+      class="form-control"
+      name="listing[description]"
+      placeholder="enter description" 
+      required
+      ></textarea>
+      <label for="" class="form-label">Image Link</label>
+      <input
+      class="form-control"
+      name="listing[image]"
+      placeholder="enter image URL/Link"
+      type="text"
+      required
+      />
+      <label for="" class="form-label">Price</label>
+      <input class="form-control" name="listing[price]" placeholder="enter price" type="number" required />
+      <label for="" class="form-label">Country</label>
+      <input class="form-control" name="listing[country]" placeholder="enter country" type="text" required />
+      <label for="" class="form-label">Location</label>
+      <input
+      class="form-control"
+      name="listing[location]"
+      placeholder="enter location"
+      type="text"
+      required
+      />
+      <br /><br />
+      <button class="btn btn-success">Add</button>
+    </form>
+  </div>
+  
+  
+</div>
+  <script src="/js/script.js"></script>
+  <%- include("../includes/footer.ejs")%>

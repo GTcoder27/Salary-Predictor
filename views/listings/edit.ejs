@@ -1,0 +1,39 @@
+<%- include("../includes/navbar.ejs")%>
+<div class="container">
+
+  <div class="col-6 offset-2  ">
+    
+    <h3>Edit your Listing</h3>
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation " novalidate >
+      
+      <label for="" class="form-label">Enter Title</label>
+      <input  class="form-control"name="listing[title]" required value="<%= listing.title %>" type="text"  />
+      <label for="" class="form-label">Description</label>
+      <div><textarea name="listing[description]" required><%= listing.description %></textarea></div>
+      <label for="" class="form-label">Img URL</label>
+      <input  class="form-control"name="listing[image]" required value="<%= listing.image %>" type="text" />
+      <label for="" class="form-label">Price</label>
+      <input  class="form-control"name="listing[price]" required value="<%= listing.price %>" type="number" />
+      <label for="" class="form-label">Country</label>
+      <input 
+      class="form-control"
+      required
+      name="listing[country]"
+      value="<%= listing.country %>"
+      type="text"     
+      />
+      <label for="" class="form-label">Location</label>
+      <input 
+      class="form-control"
+      name="listing[location]"
+      required
+      value="<%= listing.location %>"
+      type="text"
+      />
+      
+      <button class="btn btn-danger mt-4 ">Edit</button>
+  </form>
+</div>
+</div>
+<script src="/js/script.js"></script>
+<%- include("../includes/footer.ejs")%>

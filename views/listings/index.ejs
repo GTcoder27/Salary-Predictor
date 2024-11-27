@@ -1,0 +1,25 @@
+<%- include("../includes/navbar.ejs")%>
+<div class="container">
+
+  <h3>All Listings</h3>
+  <div class="flex row flex-wrap items-center content-center gap-5"> 
+    <% for(let listing of allListings) { %>
+      <div class="card" style="width: 18rem;">
+        <a href="/listings/<%= listing._id %>?_method=PUT"><img class="listing_img" src="<%= listing.image%> " class="card-img-top" alt="listing_img"></a>
+        <h3><%= listing.title %></h3>
+        <h3>&#8377; <%= listing.price.toLocaleString("en-IN") %></h3>
+        <div class="card-body">
+          <p class="card-text"><%= listing.description %></p>
+        </div>
+        <!-- <a href="/listings/<%= listing._id %>/edit"></a> -->
+        <form action="/listings/<%= listing._id %>/edit">
+          <button>Edit</button>
+        </form>
+        </a>
+      </div>
+      <% } %> 
+    </div>
+    
+  </div>
+    <%- include("../includes/footer.ejs")%>
+    
